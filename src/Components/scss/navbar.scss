@@ -1,0 +1,42 @@
+$textColor: #fff;
+
+@mixin flex-box($direction: row, $space: center) {
+  display: flex;
+  justify-content: $space;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+.nav-container {
+  font-size: 1.2em;
+
+  .nav {
+    @include flex-box(_, space-between);
+    padding: 10px;
+
+    &-brand {
+      font-weight: 700;
+      color: $textColor;
+    }
+
+    &-ul {
+      @include flex-box();
+      list-style: none;
+    }
+
+    &-items {
+      padding: 10px;
+      margin: 10px;
+    }
+
+    &-link {
+      text-decoration: none;
+      color: $textColor;
+
+      &:hover {
+        text-decoration: underline;
+        color: rgba(206, 205, 205, 0.835);
+      }
+    }
+  }
+}
